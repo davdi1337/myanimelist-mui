@@ -57,7 +57,8 @@
         background-image: var(--headerimg);
         background-size: cover;
         width: 100%;
-        box-shadow: var(--box-shadow-header)
+        box-shadow: var(--box-shadow-header);
+        background-color: var(--color-grey-800);
     }
     .header .header-title {
         display: none; /* remove mal logo from header */
