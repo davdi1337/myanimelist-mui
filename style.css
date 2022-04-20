@@ -243,6 +243,9 @@
         color: var(--accent)!important;
         opacity: 0.6;
     }
+    .list-table .list-table-data .data.title .content-status {
+        color: var(--color-grey-500);
+    }
     /* replace status colors */
     .data.status.completed {
         background-color: var(--color-completed)!important;
