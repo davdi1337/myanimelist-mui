@@ -1,1 +1,1 @@
-# myanimelist-mui
+# MyAnimeList - MaterialUI
