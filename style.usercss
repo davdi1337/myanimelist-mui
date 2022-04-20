@@ -1,0 +1,278 @@
+/* ==UserStyle==
+@name           MyAnimeList - MaterialUI
+@namespace      https://github.com/davdi1337/myanimelist-mui
+@version        1.0.0
+@description    Transform myanimelist style to materialui
+@author         davdi1337
+==/UserStyle== */
+
+@-moz-document domain("myanimelist.net/animelist") {
+    @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    
+    :root {
+        --bg: #161c24;
+        --card-transparent: rgba(145, 158, 171, 0.12);
+        --bg-transparent: rgba(33, 43, 54, .8);
+        --card: #212B36;
+        --accent: #2065D1;
+        --borderrad-md: 16px;
+        --borderrad-sm: 8px;
+        --font: 'Public Sans', sans-serif;
+        --headerimg: url("https://i.imgur.com/viF1v6G.png");
+        --userimgsize: 150px;
+        --box-shadow-lg: -40px 40px 80px 0 rgb(0 0 0 / 40%);
+        --box-shadow-md: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+        --box-shadow-card: 0 0 2px 0 rgb(0 0 0 / 20%), 0 12px 24px -4px rgb(0 0 0 / 12%);
+        --box-shadow-card2: 0 8px 16px 0 rgb(0 0 0 / 16%);
+        --box-shadow-header: rgb(0 0 0 / 16%) 0px 8px 16px 0px;
+        --color-white: #ffffff;
+        --color-grey-900: #161C24;
+        --color-grey-800: #212B36;
+        --color-grey-700: #454F5B;
+        --color-grey-600: #637381;
+        --color-grey-500: #919EAB;
+        --color-grey-400: #C4CDD5;
+        --color-grey-300: #DFE3E8;
+        --color-grey-200: #F4F6F8;
+        --color-grey-100: #F9FAFB;
+        --color-completed: #2065D1;
+        --color-watching: #54D62C;
+        --color-onhold: #FFC107;
+        --color-dropped: #FF4842;
+    }
+    body.ownlist {
+        background-color: var(--bg)!important;
+        -webkit-font-smoothing: antialiased!important;
+        text-rendering: optimizelegibility!important;
+        box-sizing: border-box!important;
+    }
+    footer {
+        display: none; /* hide footer */
+    }
+    body, a, button, input {
+        font-family: var(--font)!important;
+    }
+    a,
+    .list-table .list-table-data .data a{
+        color: var(--color-white)!important;
+        font-weight: 600;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    a:hover{
+        opacity: 0.5;
+    }
+    .header {
+        height: 300px;
+        background-image: var(--headerimg);
+        background-size: cover;
+        width: 100%;
+        box-shadow: var(--box-shadow-header)
+    }
+    .header .header-title {
+        display: none; /* remove mal logo from header */
+    }
+    .list-menu-float {
+        position: absolute;
+        top: calc(300px - calc(var(--userimgsize) / 2));
+        left: 50%;
+        width: var(--userimgsize);
+        transform: translateX(-50%);
+        border: none;
+    }
+    .list-menu-float > .icon-menu:not(.profile),
+    .list-menu-float .icon-menu.logout{
+        display: none; /* hide floating menu */
+    }
+    .list-menu-float .icon-menu.profile {
+        width: var(--userimgsize);
+        height: var(--userimgsize);
+        border-radius: 50%;
+        border: 4px solid var(--bg);
+        box-shadow: 0 0 0 2px var(--accent);
+    }
+    .status-menu-container.fixed {
+        position: sticky;
+        top: 0px;
+    }
+    .list-container {
+        top: var(--userimgsize);
+        background-color: transparent!important;
+        border: none;
+    }
+    .status-menu-container {
+        background-color: var(--bg-transparent);
+        backdrop-filter: blur(6px);
+        border: none;
+        border-radius: var(--borderrad-sm);
+        box-shadow: var(--box-shadow-header);
+    }
+    .status-menu-container a {
+        font-size: 0.875rem!important;
+        line-height: 1.57143;
+    }
+    .status-menu-container .status-menu .status-button.on {
+        color: var(--accent)!important;
+    }
+    .status-menu-container .status-menu .status-button:after {
+        background: none;
+    }
+    .status-menu-container .search-container #search-box input {
+        background-color: var(--color-grey-900);
+        border: none;
+        outline: none;
+        border-radius: var(--borderrad-sm);
+        color: var(--color-grey-400)!important;
+        padding: 5px;
+    }
+    .list-block {
+        margin-block: 50px;
+    }
+    .list-unit .list-status-title {
+        /* background-color: var(--color-grey-800); */
+        background-color: transparent;
+        border: none!important;
+    }
+    .list-unit .list-status-title .text {
+        color: var(--color-white);
+        font-family: var(--font)!important;
+        display: none; /* hide all anime text */
+    }
+    .list-unit .list-status-title .stats a {
+        background-color: var(--color-grey-800);
+        width: 14px;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        gap: 15px;
+        position: relative;
+        border-radius: var(--borderrad-sm);
+        transition: width 0.3s ease-out;
+    }
+    .list-unit .list-stats {
+        background-color: var(--accent);
+        margin-block: 5px;
+        border-radius: var(--borderrad-sm);
+        width: 1024px;
+        color: var(--color-white);
+        font-size: 0.875rem!important;
+        font-weight: 600;
+        padding-block: 5px;
+    }
+    .list-unit .list-stats span {
+        color: var(--color-white);
+    }
+    .list-unit .list-status-title .stats a:hover {
+        width: 70px;
+        opacity: 1;
+    }
+    .list-unit .list-status-title .stats {
+        position: relative;
+        display: flex;
+        font-size: 0.875rem;
+        right: 0;
+    }
+    tr.list-table-header {
+        display: none;
+    }
+    table {
+        border-spacing: 0px 10px!important;
+        border-collapse: separate!important;
+        border: none;
+        background-color: var(--color-grey-900)
+    }
+    .list-table-data {
+        background-color: var(--color-grey-800);
+        border-radius: var(--borderrad-sm)!important;
+        /* overflow: hidden!important; */
+        display: flex;
+        align-items: center;
+        height: 80px;
+        width: 100%;
+        position: relative;
+    }
+    .list-table .list-table-data .data a {
+        color: var(--color-white)!important;
+        font-weight: 600!important;
+    }
+    .list-table .list-table-data .data a:hover {
+        color: var(--accent)!important;
+    }
+    .list-table .list-table-data .data {
+        border: none!important;
+    }
+    .data.title .link.sort {
+        font-size: 0.875rem!important;
+    }
+    .data.status {
+        height: 100%;
+    }
+    .data.number {
+        display: none!important; /* hide numbers */
+    }
+    .data.image .image {
+        height: 80px!important;
+        width: 70px!important;
+        border: none!important;
+        object-fit: cover;
+        border-top-left-radius: var(--borderrad-sm);
+        border-bottom-left-radius: var(--borderrad-sm);
+    }
+    .data.status {
+        position: absolute;
+        left: -20px;
+        padding: 0!important;
+        width: 10px!important;
+        height: 10px!important;
+        border-radius: 50%;
+    }
+    .data.title.clearfix {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        justify-content: center;
+        height: 100%;
+        padding: 0!important;
+        flex: 1 0;
+    }
+    .data.score, .data.type, .data.progress {
+        margin-inline: 5px;
+        color: var(--color-white);
+    }
+    .data.score a span,
+    .data.progress span{
+        color: var(--accent)!important;
+    }
+    .list-table .list-table-data .tags .edit {
+        font-size: 0.875rem!important;
+        color: var(--accent)!important;
+        margin-right: 15px;
+    }
+    .list-table .list-table-data .tags .edit:hover {
+        color: var(--accent)!important;
+        opacity: 0.6;
+    }
+    /* replace status colors */
+    .data.status.completed {
+        background-color: var(--color-completed)!important;
+    }
+    .data.status.watching {
+        background-color: var(--color-watching)!important;
+    }
+    .data.status.onhold {
+        background-color: var(--color-onhold)!important;
+    }
+    .data.status.dropped {
+        background-color: var(--color-dropped)!important;
+    }
+    .data.status.plantowatch {
+        background-color: var(--color-grey-300)!important;
+    }
+    
+    
+    .page-common a {
+        color: var(--color-white)!important;
+        font-family: var(--font)!important;
+        background-color: var(--accent);
+    }
+}
