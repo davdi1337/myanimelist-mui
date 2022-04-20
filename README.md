@@ -3,9 +3,9 @@
 Header image change or disable:
 ```css
 :root {
-  --headerimage: url("https://imgur.com/yourimage.png");
+  --headerimg: url("https://imgur.com/yourimage.png");
   
-  --headerimage: none; /* no header image */
+  --headerimg: none; /* no header image */
 }
 ```
 Accent color change:
